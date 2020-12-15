@@ -3,6 +3,11 @@ set -euo pipefail
 IFS=$'\n\t'
 set -vx
 
+mkdir -p .git/safe
+gem install bundler --conservative
+bundle config set --local path '.bundle/bundle'
 bundle install
+bundle binstubs --all
+gem install tty
 
 # Do any other automated setup that you need to do here
