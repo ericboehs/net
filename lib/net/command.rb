@@ -3,6 +3,7 @@
 require 'forwardable'
 
 module Net
+  # Base class all commands inherit from
   class Command
     extend Forwardable
 
