@@ -17,5 +17,17 @@ module Net
       puts "v#{Net::VERSION}"
     end
     map %w(--version -v) => :version
+
+    desc 'ping', 'Command description...'
+    method_option :help, aliases: '-h', type: :boolean,
+                         desc: 'Display usage information'
+    def ping(*)
+      if options[:help]
+        invoke :help, ['ping']
+      else
+        require_relative 'commands/ping'
+        Net::Commands::Ping.new(options).execute
+      end
+    end
   end
 end
