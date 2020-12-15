@@ -16,7 +16,7 @@ module Net
       require_relative 'version'
       puts "v#{Net::VERSION}"
     end
-    map %w(--version -v) => :version
+    map %w[--version -v] => :version
 
     desc 'ping', 'Command description...'
     method_option :help, aliases: '-h', type: :boolean,

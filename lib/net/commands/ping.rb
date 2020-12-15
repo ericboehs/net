@@ -11,7 +11,7 @@ module Net
 
       def execute(input: $stdin, output: $stdout)
         # Command logic goes here ...
-        output.puts "OK"
+        output.puts 'OK'
       end
     end
   end
