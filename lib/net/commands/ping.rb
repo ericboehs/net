@@ -8,6 +8,8 @@ module Net
     class Ping < Net::Command
       def initialize(options)
         @options = options
+
+        super()
       end
 
       def execute(_input: $stdin, output: $stdout)
